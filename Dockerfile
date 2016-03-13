@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 MAINTAINER Alex Castle <agcastle64@gmail.com>
 
 ARG FACTORIO_DOWNLOAD_URL="https://www.factorio.com/get-download/0.12.26/headless/linux64"
-
+ADD entrypoint.sh /app/entrypoint.sh
 RUN useradd factorio \
   && apt-get update \
   && apt-get install -y wget \
@@ -13,7 +13,7 @@ RUN useradd factorio \
   && chown -R factorio /app \
   && chmod -R 775 /app
 
-ADD entrypoint.sh /app/entrypoint.sh
+
 VOLUME ["/app/saves"]
 EXPOSE 34197/udp
 USER factorio
