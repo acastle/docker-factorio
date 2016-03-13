@@ -9,7 +9,7 @@ RUN useradd factorio \
   && wget ${FACTORIO_DOWNLOAD_URL} -O /tmp/factorio.tar.gz --no-check-certificate \
   && tar -xzf /tmp/factorio.tar.gz -C /tmp \
   && rm /tmp/factorio.tar.gz \
-  && mv /tmp/factorio/ /app/
+  && mv /tmp/factorio/ /app/ \
   && chown -R factorio /app \
   && chmod -R 775 /app
 
