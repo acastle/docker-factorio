@@ -11,11 +11,10 @@ RUN useradd factorio \
   && mv /tmp/factorio/ /app/
 
 ADD entrypoint.sh /app/entrypoint.sh
-
+VOLUME ["/app/saves"]
 RUN chown -R factorio /app \
   && chmod -R 775 /app
 
-VOLUME ["/app/saves"]
 EXPOSE 34197/udp
 USER factorio
 WORKDIR "/app"
