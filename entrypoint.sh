@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if  [ ! -f "/app/saves/world_save"]; then
+if  [ ! -f "/app/saves/world_save" ]; then
   /app/bin/x64/factorio --create world_save
 fi
 
